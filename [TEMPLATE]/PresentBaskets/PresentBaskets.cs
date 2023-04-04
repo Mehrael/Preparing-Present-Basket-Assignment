@@ -21,9 +21,32 @@ namespace Problem
         /// <param name="items">Pair of weight (Key) & cost (Value) of each item</param>
         /// <returns>max total cost to fill two baskets</returns>
         static public double PreparePresentBaskets(int W1, int W2, KeyValuePair<int, int>[] items)
-        {
+        {                                                              //        W    C
             //REMOVE THIS LINE BEFORE START CODING
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            SortedDictionary<double, int> cost_per_unit = new SortedDictionary<double, int>();
+
+            for (int i = 0; i < items.Length; i++)
+                cost_per_unit.Add(items[i].Value / items[i].Key, items[i].Key);
+
+            double totalCost = 0;
+
+            foreach (var item in cost_per_unit)
+            {
+                if(W1 >= item.Value)
+                {
+                    totalCost += item.Value * item.Key;
+                    W1 -= item.Value;
+                }
+                else if (W2 >= item.Value)
+                {
+                    totalCost += item.Value * item.Key;
+                    W2 -= item.Value;
+                }
+                
+            }
+            return totalCost;
         }
         #endregion
     }

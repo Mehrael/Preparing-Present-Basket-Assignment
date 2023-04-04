@@ -4,3 +4,10 @@ E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\GREEDY\[R3] Prepa
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\GREEDY\[R3] PreparingPresentBaskets\[TEMPLATE]\PresentBaskets\bin\Debug\PresentBaskets.pdb
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\GREEDY\[R3] PreparingPresentBaskets\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.exe
 E:\COURSES\Algorithms\[1] [ALL PROBLEMS - CODE]\UNIFIED OUTPUT\GREEDY\[R3] PreparingPresentBaskets\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.pdb
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\bin\Debug\PresentBaskets.exe.config
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\bin\Debug\PresentBaskets.exe
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\bin\Debug\PresentBaskets.pdb
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.csproj.AssemblyReference.cache
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.csproj.CoreCompileInputs.cache
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.exe
+E:\MehraelAshraf\Kolia\6th semester\Algo\Tasks AND Assignments\Assignment 2\Preparing Present Basket\[TEMPLATE]\PresentBaskets\obj\Debug\PresentBaskets.pdb
