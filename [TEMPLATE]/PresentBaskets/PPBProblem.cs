@@ -122,7 +122,7 @@ namespace Problem
                 }
                 actualResult = br.ReadDouble();
 
-                Console.WriteLine("W1 = {0}, W2 = {1} N = {2} Res = {3}", W1, W2, N, actualResult);
+                //Console.WriteLine("W1 = {0}, W2 = {1} N = {2} Res = {3}", W1, W2, N, actualResult);
                 output = 0;
                 caseTimedOut = true;
                 caseException = false;
