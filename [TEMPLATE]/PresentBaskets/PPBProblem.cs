@@ -122,7 +122,7 @@ namespace Problem
                 }
                 actualResult = br.ReadDouble();
 
-                //Console.WriteLine("W1 = {0}, W2 = {1} N = {2} Res = {3}", W1, W2, N, actualResult);
+                Console.WriteLine("W1 = {0}, W2 = {1} N = {2} Res = {3}", W1, W2, N, actualResult);
                 output = 0;
                 caseTimedOut = true;
                 caseException = false;
@@ -131,10 +131,11 @@ namespace Problem
                     {
                         try
                         {
-                            //Stopwatch sw = Stopwatch.StartNew();
+                            Stopwatch sw = Stopwatch.StartNew();
                             output = PresentBaskets.PreparePresentBaskets(W1, W2, items);
-                            //sw.Stop();
-                            //Console.WriteLine("N = {0}, time in ms = {1}", items.Length, sw.ElapsedMilliseconds);
+                            sw.Stop();
+                            Console.WriteLine("N = {0}, time in ms = {1}", items.Length, sw.ElapsedMilliseconds);
+                            Console.WriteLine("N = {0}, time in secs = {1}", items.Length, sw.ElapsedMilliseconds / 1000.0);
                         }
                         catch
                         {

@@ -24,27 +24,74 @@ namespace Problem
         {                                                              //        W    C
             //REMOVE THIS LINE BEFORE START CODING
             //throw new NotImplementedException();
-
-            SortedDictionary<double, int> cost_per_unit = new SortedDictionary<double, int>();
+                                                                  //  cost/unit  #units
+            KeyValuePair<double, int>[] cost_per_unit = new KeyValuePair<double, int>[items.Length];
 
             for (int i = 0; i < items.Length; i++)
-                cost_per_unit.Add(items[i].Value / items[i].Key, items[i].Key);
+            {
+               
+                //Console.WriteLine("items: " + items[i].Key + ": " + items[i].Value);
 
+                if (items[i].Key == 0)
+                    continue;
+
+                cost_per_unit[i] = new KeyValuePair<double, int>((double)items[i].Value / items[i].Key, items[i].Key);
+                //Console.WriteLine("cost_per_unit : " + cost_per_unit[i].Key.ToString() + ": " + cost_per_unit[i].Value.ToString());
+            }
+            Array.Sort(cost_per_unit, (a, b) => b.Key.CompareTo(a.Key));
             double totalCost = 0;
 
-            foreach (var item in cost_per_unit)
-            {
-                if(W1 >= item.Value)
+            //foreach (var item in cost_per_unit)
+            //    Console.WriteLine(item.Key.ToString() + ": " + item.Value.ToString());
+
+            for (int i = 0; i < cost_per_unit.Length; i++) 
+            { 
+                if(W1 == 0 && W2 == 0)
+                    return totalCost;
+
+                if (W1 >= cost_per_unit[i].Value)
                 {
-                    totalCost += item.Value * item.Key;
-                    W1 -= item.Value;
+                    totalCost += cost_per_unit[i].Value * cost_per_unit[i].Key;
+                    W1 -= cost_per_unit[i].Value;
+                    continue;
+                    //Console.WriteLine("W1 >= item.Value: W1 now = " + W1);
                 }
-                else if (W2 >= item.Value)
+                else if (W2 >= cost_per_unit[i].Value)
                 {
-                    totalCost += item.Value * item.Key;
-                    W2 -= item.Value;
+                    totalCost += cost_per_unit[i].Value * cost_per_unit[i].Key;
+                    W2 -= cost_per_unit[i].Value;
+                    continue;
+                    //Console.WriteLine("W2 >= item.Value: W2 now = " + W2);
                 }
-                
+                else if(W1 < cost_per_unit[i].Value && W1 != 0)
+                {
+                    totalCost += W1 * cost_per_unit[i].Key;
+                    W1 = 0;
+                    cost_per_unit[i] = new KeyValuePair<double, int>(cost_per_unit[i].Key, cost_per_unit[i].Value - W1);
+                    //Console.WriteLine("W1 < item.Value && W1 != 0: W1 now = " + W1);
+
+                }
+                else if(W2 < cost_per_unit[i].Value && W2 != 0)
+                {
+                    totalCost += W2 * cost_per_unit[i].Key;
+                    W2 = 0;
+                    cost_per_unit[i] = new KeyValuePair<double, int>(cost_per_unit[i].Key, cost_per_unit[i].Value - W2);
+
+                    //Console.WriteLine("W2 < item.Value && W2 != 0: W2 now = " + W2);
+
+                }
+
+
+                if (W1 + W2 < cost_per_unit[i].Value)
+                {
+                    totalCost += (W1 + W2) * cost_per_unit[i].Key;
+                    //W1 = 0; 
+                    //W2 = 0;
+                    //Console.WriteLine("W1 + W2 < item.Value: W1 now = {0}, W2 now = {1}", W1, W2);
+                    return totalCost;
+                }
+                if (cost_per_unit[i].Value != 0)
+                    i--;
             }
             return totalCost;
         }
